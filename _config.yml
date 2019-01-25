@@ -27,9 +27,7 @@ copyright:
   year:             2019
   name:             James Jin
 
-# Google-analytics
-google-analytics:
-  id:               ""
+
 
 # Disqus
 disqus:
@@ -94,3 +92,7 @@ gems:
   - jekyll-admin
 
 exclude:            [vendor]
+
+# Google-analytics
+google-analytics:
+  id:               ""
