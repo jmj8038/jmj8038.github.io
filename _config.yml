@@ -95,4 +95,4 @@ exclude:            [vendor]
 
 # Google-analytics
 google-analytics:
-  id:               ""
+  id:               "UA-133202209-1"
