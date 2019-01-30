@@ -34,6 +34,8 @@ body {
 .header {
   padding: 2%;
   margin-bottom: 1.5em;
+  background-color : $oc-black;
+  border-radius: 3px;
 
   &-title {
     margin: 0.3em 0;
@@ -42,7 +44,7 @@ body {
     font-weight: 600;
 
     a {
-      color: $base-color;
+      color: $oc-white; //$base-color;
       &:hover,
       &:focus {
         text-decoration: none;
@@ -57,7 +59,7 @@ body {
 
   &-nav {
     a {
-      color: $oc-gray-7;
+      color: $oc-white; //$oc-gray-7;
       text-transform: lowercase;
       -webkit-transition: all .2s ease;
          -moz-transition: all .2s ease;
@@ -66,7 +68,7 @@ body {
 
       &:hover,
       &:focus {
-        color: $oc-gray-7;
+        color: #82e0aa; //$oc-gray-7;
         text-decoration: none;
       }
     }
