@@ -1,4 +1,15 @@
-'''
+---
+layout: post
+title: "MongoDBWithDocker"
+description: "Docker container 내에서 MongoDB 구축"
+date: 2019-02-06
+tags: [mongoDB+docker]
+category: docker
+comments: true
+share: true
+use_math: true
+---
+
 1. DOCKER 설치
 sudo curl -fsSL https://get.docker.com/ | sudo sh
 sudo systemctl start docker
