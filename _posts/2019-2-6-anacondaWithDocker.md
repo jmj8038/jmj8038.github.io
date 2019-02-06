@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AnacondaWithDocker"
-description: "Docker 활용 django 웹 환경 구축"
+description: "Docker container 내에서 anaconda 활용"
 date: 2019-02-06
 tags: [anaconda+docker]
 category: docker
