@@ -31,11 +31,12 @@ Docker 활용 django 웹 환경 구축
     
 
 2. 장고 설치
-    (https://docs.docker.com/compose/django/)
+> * (https://docs.docker.com/compose/django/)
+> * step1. dockerfile 생성
 
-        step1. dockerfile 생성
+<br>
+
         # vim dockerfile                      # 확장자는 없음
-        ```
         ---------------------------------------------------------------------------------------------------------
          FROM python:3.5                       # 기본 이미지를 python3.5 로 설정
          ENV PYTHONUNBUFFERED 1                # 환경변수 설정 삭제할까?
@@ -45,7 +46,7 @@ Docker 활용 django 웹 환경 구축
          RUN pip install -r requirements.txt   # docker 내 requirements.txt 파일을 이용하여 패키지 설치
          ADD . /code/                          # 로컬 내 현재 위치에 있는 모든 파일 및 폴더를 docker 의 /code/ 폴더로 마운트
         ----------------------------------------------------------------------------------------------------------
-        ```
+
     
 
 
