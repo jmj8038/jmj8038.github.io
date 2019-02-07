@@ -20,12 +20,15 @@ Docker 활용 django 웹 환경 구축
             (sudo) curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
         ```
         
-
 > * 2. 권한변경
-    sudo chmod +x /usr/local/bin/docker-compose
-
-    3. 버젼확인
-    $ docker-compose --version
+    ```
+        sudo chmod +x /usr/local/bin/docker-compose
+    ```    
+> * 3. 버젼확인
+    ```
+        $ docker-compose --version
+    ```
+    
 
 2. 장고 설치
     (https://docs.docker.com/compose/django/)
