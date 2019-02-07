@@ -15,9 +15,7 @@ Docker 활용 django 웹 환경 구축
 
 
 1. 사전준비 (https://docs.docker.com/compose/install/#install-compose)
-> * 1. docker-compose 설치
-
-<br>
+> * 1. docker-compose 설치  
         ```
             (sudo) curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
         ```
