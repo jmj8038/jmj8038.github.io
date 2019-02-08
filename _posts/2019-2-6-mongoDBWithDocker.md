@@ -91,16 +91,23 @@ python -m pip install pymongo (Window cmd)
 '''
 ## 예제코드<br>
 
+~~~
 import pymongo
 myclient = pymongo.MongoClient("mongodb://192.168.103.103:27017/")
-mydb = myclient["mydatabase"] # database 생성
-mycol = mydb["customers"] # table 생성
+mydb = myclient["mydatabase"]
+	: database 생성
+mycol = mydb["customers"] 
+	: table 생성
+~~~
 
-	한개 data 입력
-mydict = { "name": "John", "address": "Highway 37"} 
+한개 data 입력<br>
+~~~
+mydict = { "name": "John", "address": "Highway 37"}<br>
 mycol.insert_one(mydict) 
+~~~
 
-	여러개 data 입력
+여러개 data 입력<br>
+~~~
 mylist = [
   { "name": "Amy", "address": "Apple st 652"},
   { "name": "Hannah", "address": "Mountain 21"},
@@ -116,11 +123,16 @@ mylist = [
   { "name": "Viola", "address": "Sideway 1633"}
 ]
 mycol.insert_many(mylist) 
+~~~
+한개 data 출력
 
-	한개 data 출력
+~~~
 x = mycol.find_one()
 print(x)
+~~~
 
-	모든 data 출력
+모든 data 출력
+~~~
 for y in mycol.find():
     print(y)
+~~~
