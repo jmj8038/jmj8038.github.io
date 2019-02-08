@@ -22,18 +22,17 @@ use_math: true
 	systemctl restart firewalld.service
 ~~~
 
-6. jupyter notebook --ip='*' --port=8888 --no-browser --allow-root
-	: 화면에 보이는 url을 브라우저에 입력
+6. jupyter notebook --ip='*' --port=8888 --no-browser --allow-roo
 ~~~
+    화면에 보이는 url을 브라우저에 입력
 	http://(2ba3844c4800 or 127.0.0.1):8888/?token=ccafdb577f2d3f6b1d4f69cb830afb4129da45a6dadcec6d
 ~~~
 
 7. 이미 설치되어 경우
-~~~
+
 sudo systemctl start docker<br>
 sudo systemctl enable docker<br>
 docker ps<br>
 docker start jupyterNotebook <br>
 docker attach jupyterNotebook<br>
 jupyter notebook --ip='*' --port=8888 --no-browser --allow-root<br>
-~~~
