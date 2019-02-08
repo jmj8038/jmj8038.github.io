@@ -65,17 +65,17 @@ docker attach mongo1-client -> Enter (Enter키를 꼭 클릭)
 cd bin
 env
 echo $MONGO_PORT_27017_TCP_ADDR
- :docker 내부에서 server로 접속하기 위해 할당 받은 IP 주소
+    * docker 내부에서 server로 접속하기 위해 할당 받은 IP 주소
 echo $MONGO_PORT_27017_TCP_PORT
- :docker 내부에서 server로 접속하기 위해 할당 받은 PORT
+    * docker 내부에서 server로 접속하기 위해 할당 받은 PORT
 ~~~
 
 9. mongoDB 접속 
 ~~~
 mongo $MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT
-: 8단계에서 입력 후 확인 받은 주소 및 PORT를 집적 입력 가능
+    * 8단계에서 입력 후 확인 받은 주소 및 PORT를 집적 입력 가능
 docker exec -it container이름 mysql -uroot -p
-: 접속시 mysql 비밀번호 입력
+    * 접속시 mysql 비밀번호 입력
 ~~~
 
 10. 방화벽 개방
