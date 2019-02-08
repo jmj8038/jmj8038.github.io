@@ -10,25 +10,29 @@ share: true
 use_math: true
 ---
 
-1. DOCKER 설치<br>
+1. DOCKER 설치
+<br>
 ~~~
 sudo curl -fsSL https://get.docker.com/ | sudo sh
 sudo systemctl start docker
 sudo systemctl enable docker
 ~~~
 
-2. docker 그룹에 사용자 등록 : docker 명령시 마다 sudo 입력할 필요 없음<br>
+2. docker 그룹에 사용자 등록 : docker 명령시 마다 sudo 입력할 필요 없음
+<br>
 ~~~
 sudo usermod -aG docker $(whoami)
 sudo reboot
 ~~~
 
-3. 다운로드 가능한 mongp image들 검색<br>
+3. 다운로드 가능한 mongp image들 검색
+<br>
 ~~~
 docker search mongo
 ~~~
 
-4. mongo라는 image 다운로드(pull) : pull 가장 많이 한 image를 pull<br>
+4. mongo라는 image 다운로드(pull) : pull 가장 많이 한 image를 pull
+<br>
 ~~~
 docker pull mongo
 ~~~
@@ -36,7 +40,8 @@ docker pull mongo
     * mongoDB를 docker에서 사용시 server와 client container를 각자 만들고 link하여 client container 를 통해 server 접속
     * python을 이용하여 외부에서 접속시에는 바로 server를 통해 접속을 한다. 다만, 내부에서 CRUD시에는 client를 통해 실행
 
-5. mongo server 설치<br>
+5. mongo server 설치
+<br>
 ~~~
 docker run --name container이름 -d -v /data:/data/db -p 27017:27017 mongo --noauth --bind_ip=0.0.0.0 
 ~~~
@@ -45,7 +50,8 @@ docker run --name container이름 -d -v /data:/data/db -p 27017:27017 mongo --no
 	* mongo는 image 이름이고 noauth는 계정업이 접속 가능 
 	* bind_ip=0.0.0.0는 아무 ip 주소로 접속 가능
 
-6. mongo client 설치<br>
+6. mongo client 설치
+<br>
 ~~~
 docker run -itd --name container이름(client) -p 37017:27017 --link container이름(server):mongo mongo /bin/bash
 ~~~
@@ -54,12 +60,14 @@ docker run -itd --name container이름(client) -p 37017:27017 --link container�
     * 클라이언트에서 서버로 접속하는 것이므로 클라이언트를 포트포워딩(-p 37017:27017)
     다만, 외부접속시 바로 server로 접속하므로 client에서 포트포워딩은 필요 없은 것 같음
 
-7. mongo client	container 실행<br>
+7. mongo client	container 실행
+<br>
 ~~~
 docker attach mongo1-client -> Enter (Enter키를 꼭 클릭)
 ~~~
 
-8. (옵션) mongoDB 정상 여부 확인 (client container 상에서 실행)<br>
+8. (옵션) mongoDB 정상 여부 확인 (client container 상에서 실행)
+<br>
 ~~~
 cd bin
 env
@@ -69,7 +77,8 @@ echo $MONGO_PORT_27017_TCP_PORT
 : docker 내부에서 server로 접속하기 위해 할당 받은 PORT
 ~~~
 
-9. mongoDB 접속<br>
+9. mongoDB 접속
+<br>
 ~~~
 mongo $MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT
 : 8단계에서 입력 후 확인 받은 주소 및 PORT를 집적 입력 가능
@@ -77,7 +86,8 @@ docker exec -it container이름 mysql -uroot -p
 : 접속시 mysql 비밀번호 입력
 ~~~
 
-10. 방화벽 개방<br>
+10. 방화벽 개방
+<br>
 ~~~
 sudo firewall-cmd --zone=public --permanent --add-port=27017/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=37017/tcp 
@@ -85,7 +95,8 @@ sudo systemctl restart firewalld.service
 sudo iptables -L
 ~~~
 
-11. Python을 활용한 mongoDB 접속 및 CRUD<br>
+11. Python을 활용한 mongoDB 접속 및 CRUD
+<br>
 python -m pip install pymongo (Window cmd)
 '''
 ## 예제코드<br>
