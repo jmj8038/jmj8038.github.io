@@ -40,8 +40,7 @@ docker pull mongo
 ~~~
 docker run --name container이름 -d -v /data:/data/db -p 27017:27017 mongo --noauth --bind_ip=0.0.0.0 
 ~~~
-    * 몽고 데몬은 기본적으로 /data/db 폴더에 데이터를 기록한다. 호스트의 /data 폴더를 컨테이너의 /data/db 폴더에 마운트한다. 
-   결과적으로 호스트의 /data 폴더에 몽고디비 데이터가 저장
+    * 몽고 데몬은 기본적으로 /data/db 폴더에 데이터를 기록한다. 호스트의 /data 폴더를 컨테이너의 /data/db 폴더에 마운트한다. 결과적으로 호스트의 /data 폴더에 몽고디비 데이터가 저장
 	* 외부접속시 27017 포트로 포트포워딩
 	* mongo는 image 이름이고 noauth는 계정업이 접속 가능 
 	* bind_ip=0.0.0.0는 아무 ip 주소로 접속 가능
@@ -65,9 +64,9 @@ docker attach mongo1-client -> Enter (Enter키를 꼭 클릭)
 cd bin
 env
 echo $MONGO_PORT_27017_TCP_ADDR
-    * docker 내부에서 server로 접속하기 위해 할당 받은 IP 주소
+: docker 내부에서 server로 접속하기 위해 할당 받은 IP 주소
 echo $MONGO_PORT_27017_TCP_PORT
-    * docker 내부에서 server로 접속하기 위해 할당 받은 PORT
+: docker 내부에서 server로 접속하기 위해 할당 받은 PORT
 ~~~
 
 9. mongoDB 접속 
@@ -95,9 +94,9 @@ python -m pip install pymongo (Window cmd)
 import pymongo
 myclient = pymongo.MongoClient("mongodb://192.168.103.103:27017/")
 mydb = myclient["mydatabase"]
-	: database 생성
+: database 생성
 mycol = mydb["customers"] 
-	: table 생성
+: table 생성
 ~~~
 
 한개 data 입력<br>
@@ -134,5 +133,5 @@ print(x)
 모든 data 출력
 ~~~
 for y in mycol.find():
-    print(y)
+print(y)
 ~~~
