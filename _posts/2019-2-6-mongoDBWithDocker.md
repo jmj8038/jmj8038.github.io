@@ -72,9 +72,9 @@ echo $MONGO_PORT_27017_TCP_PORT
 9. mongoDB 접속<br>
 ~~~
 mongo $MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT
-    * 8단계에서 입력 후 확인 받은 주소 및 PORT를 집적 입력 가능
+: 8단계에서 입력 후 확인 받은 주소 및 PORT를 집적 입력 가능
 docker exec -it container이름 mysql -uroot -p
-    * 접속시 mysql 비밀번호 입력
+: 접속시 mysql 비밀번호 입력
 ~~~
 
 10. 방화벽 개방<br>
@@ -97,4 +97,41 @@ mydb = myclient["mydatabase"]
 : database 생성
 mycol = mydb["customers"] 
 : table 생성
+~~~
+
+한개 data 입력<br>
+~~~
+mydict = { "name": "John", "address": "Highway 37"}<br>
+mycol.insert_one(mydict) 
+~~~
+
+여러개 data 입력<br>
+~~~
+mylist = [
+  { "name": "Amy", "address": "Apple st 652"},
+  { "name": "Hannah", "address": "Mountain 21"},
+  { "name": "Michael", "address": "Valley 345"},
+  { "name": "Sandy", "address": "Ocean blvd 2"},
+  { "name": "Betty", "address": "Green Grass 1"},
+  { "name": "Richard", "address": "Sky st 331"},
+  { "name": "Susan", "address": "One way 98"},
+  { "name": "Vicky", "address": "Yellow Garden 2"},
+  { "name": "Ben", "address": "Park Lane 38"},
+  { "name": "William", "address": "Central st 954"},
+  { "name": "Chuck", "address": "Main Road 989"},
+  { "name": "Viola", "address": "Sideway 1633"}
+]
+mycol.insert_many(mylist) 
+~~~
+한개 data 출력
+
+~~~
+x = mycol.find_one()
+print(x)
+~~~
+
+모든 data 출력
+~~~
+for y in mycol.find():
+print(y)
 ~~~
