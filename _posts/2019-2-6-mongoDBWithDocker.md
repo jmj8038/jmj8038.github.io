@@ -65,9 +65,9 @@ docker attach mongo1-client -> Enter (Enter키를 꼭 클릭)
 cd bin
 env
 echo $MONGO_PORT_27017_TCP_ADDR
-    * docker 내부에서 server로 접속하기 위해 할당 받은 IP 주소
+ :docker 내부에서 server로 접속하기 위해 할당 받은 IP 주소
 echo $MONGO_PORT_27017_TCP_PORT
-    * docker 내부에서 server로 접속하기 위해 할당 받은 PORT
+ :docker 내부에서 server로 접속하기 위해 할당 받은 PORT
 ~~~
 
 9. mongoDB 접속 
