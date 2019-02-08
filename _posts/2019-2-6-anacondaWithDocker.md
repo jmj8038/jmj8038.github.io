@@ -9,6 +9,7 @@ comments: true
 share: true
 use_math: true
 ---
+
 1. continuumio/anaconda3
 2. docker search anaconda3
 3. docker pull continuumio/anaconda3
@@ -29,9 +30,9 @@ use_math: true
 
 7. 이미 설치되어 경우
 <br>
-sudo systemctl start docker
-sudo systemctl enable docker
-docker ps
-docker start jupyterNotebook 
-docker attach jupyterNotebook
-jupyter notebook --ip='*' --port=8888 --no-browser --allow-root
+sudo systemctl start docker<br>
+sudo systemctl enable docker<br>
+docker ps<br>
+docker start jupyterNotebook <br>
+docker attach jupyterNotebook<br>
+jupyter notebook --ip='*' --port=8888 --no-browser --allow-root<br>
