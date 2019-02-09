@@ -3,7 +3,7 @@ layout: post
 title: "Django&MysqlWithDocker"
 description: "Docker 활용 django 웹 환경 구축"
 date: 2019-02-04
-tags: [django+mysql+docker]
+tags: [django,mysql,docker]
 category: docker
 comments: true
 share: true
