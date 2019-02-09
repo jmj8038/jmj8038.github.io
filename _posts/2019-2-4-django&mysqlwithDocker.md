@@ -19,20 +19,21 @@ Docker 활용 django 웹 환경 구축
 ~~~
 	(sudo) curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ~~~
-2. 권한변경
+	2. 권한변경
 ~~~
 	sudo chmod +x /usr/local/bin/docker-compose
 ~~~
-3. 버젼확인
+	3. 버젼확인
 ~~~
 	$ docker-compose --version
 ~~~
 
 2. 장고 설치
-    (https://docs.docker.com/compose/django/)
-<br>
+ 참고 : (https://docs.docker.com/compose/django/)
 step1. dockerfile 생성<br>
+~~~
 vim dockerfile<br>
+~~~
 : 확장자는 없음
 
 ~~~
@@ -45,8 +46,10 @@ vim dockerfile<br>
      ADD . /code/                          # 로컬 내 현재 위치에 있는 모든 파일 및 폴더를 docker 의 /code/ 폴더로 마운트
 ~~~
 
-step2. requirement.txt 생성
+step2. requirement.txt 생성<br>
+~~~
 vim requirements.txt
+~~~
 : django project 생성 및 실행에 필요한 최소한의 파이썬 패키지
 <br>
 ~~~
